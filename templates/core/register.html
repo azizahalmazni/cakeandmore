@@ -1,12 +1,13 @@
 {% include 'header.html' %}
 <div style="text-align:center; padding:40px;">
-  <h2>🍰 تسجيل الدخول</h2>
+  <h2>🎀 إنشاء حساب جديد</h2>
   <form method="POST" style="max-width:400px;margin:auto;background:#fff;padding:20px;border-radius:15px;box-shadow:0 0 15px rgba(255,182,193,0.3);">
     {% csrf_token %}
     <input type="text" name="username" placeholder="اسم المستخدم" required style="width:90%;padding:10px;margin:10px;border:1px solid #f0c0d0;border-radius:10px;"><br>
+    <input type="email" name="email" placeholder="البريد الإلكتروني" required style="width:90%;padding:10px;margin:10px;border:1px solid #f0c0d0;border-radius:10px;"><br>
     <input type="password" name="password" placeholder="كلمة المرور" required style="width:90%;padding:10px;margin:10px;border:1px solid #f0c0d0;border-radius:10px;"><br>
-    <button type="submit" style="background-color:#ffadc6;border:none;padding:10px 20px;color:white;border-radius:10px;font-size:16px;cursor:pointer;">دخول</button>
+    <button type="submit" style="background-color:#ffadc6;border:none;padding:10px 20px;color:white;border-radius:10px;font-size:16px;cursor:pointer;">إنشاء الحساب</button>
   </form>
-  <p>ليس لديك حساب؟ <a href="{% url 'register' %}">إنشاء حساب جديد</a></p>
+  <p>هل لديك حساب؟ <a href="{% url 'login' %}">تسجيل الدخول</a></p>
 </div>
 {% include 'footer.html' %}

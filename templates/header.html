@@ -1,23 +1,40 @@
-{% load static %}
-<header style="background-color:#8c2042; color:white; padding:15px 0;">
-  <div style="display:flex; justify-content:space-between; align-items:center; width:90%; margin:auto;">
-    
-    <!-- 🔸 الشعار -->
-    <div style="display:flex; align-items:center;">
-      <img src="{% static 'cococake_logo.jpg' %}" alt="Cake & More Logo" style="width:60px; height:60px; border-radius:50%; margin-left:10px;">
-      <h1 style="font-family:'El Messiri', sans-serif; color:#fff4dc; font-size:28px; margin:0;">Cake & More 🌻</h1>
-    </div>
-
-    <!-- 🔹 روابط التنقل -->
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    header {
+      background: linear-gradient(90deg, #ffdee9, #fff9f2);
+      color: #6b1b2e;
+      text-align: center;
+      padding: 20px;
+      font-family: 'Tajawal', sans-serif;
+      box-shadow: 0 2px 8px rgba(255,182,193,0.3);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 26px;
+    }
+    nav a {
+      color: #b23a48;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ff8ca9;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🍰 Cake & More</h1>
     <nav>
-      <ul style="list-style:none; margin:0; padding:0; display:flex; gap:25px; font-size:18px;">
-        <li><a href="/" style="color:white; text-decoration:none;">الصفحة الرئيسية</a></li>
-        <li><a href="/store/" style="color:white; text-decoration:none;">المنتجات</a></li>
-        <li><a href="/store/custom/" style="color:white; text-decoration:none;">كيك حسب الطلب</a></li>
-        <li><a href="/orders/checkout/" style="color:white; text-decoration:none;">الطلب والدفع</a></li>
-        <li><a href="/login/" style="color:white; text-decoration:none;">تسجيل الدخول</a></li>
-        <li><a href="/contact/" style="color:white; text-decoration:none;">تواصل معنا</a></li>
-      </ul>
+      <a href="{% url 'home' %}">الرئيسية</a>
+      <a href="{% url 'store:product_list' %}">المنتجات</a>
+      <a href="{% url 'contact' %}">تواصل معنا</a>
+      <a href="{% url 'login' %}">تسجيل الدخول</a>
     </nav>
-  </div>
-</header>
+  </header>

@@ -1,173 +1,98 @@
 {% load static %}
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <title>Cake & More | Sun Flower 🌻</title>
 
-  <!-- ☀️ خط مبهج -->
-  <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;700&display=swap" rel="stylesheet">
+{% include 'header.html' %}
 
-  <style>
-    /* 🌼 تنسيق عام */
-    body {
-      background-color: #fffaf2; /* بيج كريمي ناعم */
-      font-family: 'El Messiri', sans-serif;
-      margin: 0;
-      padding: 0;
-      color: #6b1b2e;
-      overflow-x: hidden;
-    }
+<!-- 🎉 القسم الترحيبي -->
+<section class="fade-in" style="text-align:center; padding:80px 20px; background-color:#fffaf2; font-family:'El Messiri', sans-serif; color:#6b1b2e;">
+  <h1 style="font-size:48px; color:#8c2042; margin-bottom:15px; animation:fadeUp 1.2s ease-out;">
+    مرحباً بك في <span style="color:#e9b20f;">Cake & More</span> ☀️
+  </h1>
+  <p style="font-size:20px; color:#5a1a2e; margin-bottom:25px; animation:fadeUp 1.6s ease-out;">
+    نكهات مشرقة، كريمة ذهبية، ولمسات من البهجة تجعل يومك أكثر دفئًا وسعادة 🌻
+  </p>
+  <a href="/store/" class="btn-cake" style="
+      display:inline-block;
+      background:linear-gradient(135deg,#ffd76e,#f2b6a0);
+      color:#6b1b2e;
+      padding:15px 45px;
+      border-radius:40px;
+      text-decoration:none;
+      font-weight:bold;
+      font-size:18px;
+      box-shadow:0 5px 10px rgba(0,0,0,0.2);
+      transition:all 0.3s ease;
+    ">ابدأ التسوق الآن!</a>
+</section>
 
-    section {
-      text-align: center;
-      padding: 80px 20px;
-    }
+<!-- 🧁 قسم المنتجات -->
+<section class="fade-in" style="text-align:center; padding:80px 20px;">
+  <h2 style="color:#c24b07; font-size:32px; margin-bottom:40px;">تشكيلة كب كيك Sun Flower 🌻</h2>
+  <div class="products" style="
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:25px;
+      margin:60px auto;
+      padding:20px;
+    ">
 
-    h1, h2 {
-      animation: fadeUp 1.2s ease-out;
-    }
-
-    h1 {
-      font-size: 48px;
-      color: #8c2042;
-      margin-bottom: 15px;
-    }
-
-    h2 {
-      color: #c24b07;
-      font-size: 32px;
-      margin-bottom: 40px;
-    }
-
-    p {
-      font-size: 20px;
-      color: #5a1a2e;
-      margin-bottom: 25px;
-      animation: fadeUp 1.6s ease-out;
-    }
-
-    @keyframes fadeUp {
-      0% { opacity: 0; transform: translateY(40px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-
-    /* 🍰 الزر */
-    .btn-cake {
-      display: inline-block;
-      background: linear-gradient(135deg, #ffd76e, #f2b6a0);
-      color: #6b1b2e;
-      padding: 15px 45px;
-      border-radius: 40px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 18px;
-      box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-      transition: all 0.3s ease;
-    }
-
-    .btn-cake:hover {
-      transform: scale(1.08);
-      background: linear-gradient(135deg, #f2b6a0, #ffd76e);
-      box-shadow: 0 8px 18px rgba(0,0,0,0.25);
-    }
-
-    /* 🧁 بطاقات الكيك */
-    .products {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 25px;
-      margin: 60px auto;
-      padding: 20px;
-    }
-
-    .card {
-      background: #fffdf8;
-      width: 250px;
-      border-radius: 20px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-      overflow: hidden;
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-      text-align: center;
-    }
-
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-    }
-
-    .card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-
-    .card h4 {
-      color: #8c2042;
-      margin: 15px 0 5px;
-      font-size: 20px;
-    }
-
-    .card p {
-      color: #5a1a2e;
-      font-size: 15px;
-      margin: 0 15px 20px;
-    }
-
-    .fade-in {
-      animation: fadeIn 1.5s ease-in;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
-</head>
-<body>
-
-  {% include 'header.html' %}
-
-  <!-- 🎉 القسم الترحيبي -->
-  <section class="fade-in">
-    <h1>مرحباً بك في <span style="color:#e9b20f;">Cake & More</span> ☀️</h1>
-    <p>نكهات مشرقة، كريمة ذهبية، ولمسات من البهجة تجعل يومك أكثر دفئًا وسعادة 🌻</p>
-    <a href="/store/" class="btn-cake">ابدأ التسوق الآن!</a>
-  </section>
-
-  <!-- 🧁 قسم المنتجات -->
-  <section class="fade-in">
-    <h2>تشكيلة كب كيك Sun Flower 🌻</h2>
-    <div class="products">
-      
-      <div class="card">
-        <img src="{% static 'images/blossom_cupcake1.jpg' %}" alt="Sun Flower Cupcake">
-        <h4>كب كيك صن فلاور 🌻</h4>
-        <p>كب كيك مشمس بكريمة صفراء ناعمة تضيف إشراقة ليومك 🌞</p>
-      </div>
-
-      <div class="card">
-        <img src="{% static 'images/blossom_cupcake2.jpg' %}" alt="Blue Sky Cupcake">
-        <h4>كب كيك بلو سكاي 💙</h4>
-        <p>نكهة التوت الأزرق ولمسة من النعومة الزهرية 💙</p>
-      </div>
-
-      <div class="card">
-        <img src="{% static 'images/blossom_cupcake3.jpg' %}" alt="Rose Dream Cupcake">
-        <h4>كب كيك روز دريم 🌸</h4>
-        <p>حلم من الورد والكريمة الفاتنة، طعم يذوب جمالًا 🌸</p>
-      </div>
-
-      <div class="card">
-        <img src="{% static 'images/blossom_cupcake4.jpg' %}" alt="Happy Day Cupcake">
-        <h4>كب كيك هابي داي 💛</h4>
-        <p>حلا يملأ يومك بالبهجة والسعادة 🍯💛</p>
-      </div>
-
+    <div class="card" style="
+        background:#fffdf8;
+        width:250px;
+        border-radius:20px;
+        box-shadow:0 6px 15px rgba(0,0,0,0.1);
+        overflow:hidden;
+        transition:transform 0.4s ease, box-shadow 0.4s ease;
+        text-align:center;
+      ">
+      <img src="{% static 'images/blossom_cupcake1.jpg' %}" alt="Sun Flower Cupcake" style="width:100%; height:200px; object-fit:cover;">
+      <h4 style="color:#8c2042; margin:15px 0 5px; font-size:20px;">كب كيك صن فلاور 🌻</h4>
+      <p style="color:#5a1a2e; font-size:15px; margin:0 15px 20px;">كب كيك مشمس بكريمة صفراء ناعمة تضيف إشراقة ليومك 🌞</p>
     </div>
-  </section>
 
-  {% include 'footer.html' %}
-</body>
-</html>
+    <div class="card" style="
+        background:#fffdf8;
+        width:250px;
+        border-radius:20px;
+        box-shadow:0 6px 15px rgba(0,0,0,0.1);
+        overflow:hidden;
+        transition:transform 0.4s ease, box-shadow 0.4s ease;
+        text-align:center;
+      ">
+      <img src="{% static 'images/blossom_cupcake2.jpg' %}" alt="Blue Sky Cupcake" style="width:100%; height:200px; object-fit:cover;">
+      <h4 style="color:#8c2042; margin:15px 0 5px; font-size:20px;">كب كيك بلو سكاي 💙</h4>
+      <p style="color:#5a1a2e; font-size:15px; margin:0 15px 20px;">نكهة التوت الأزرق ولمسة من النعومة الزهرية 💙</p>
+    </div>
+
+    <div class="card" style="
+        background:#fffdf8;
+        width:250px;
+        border-radius:20px;
+        box-shadow:0 6px 15px rgba(0,0,0,0.1);
+        overflow:hidden;
+        transition:transform 0.4s ease, box-shadow 0.4s ease;
+        text-align:center;
+      ">
+      <img src="{% static 'images/blossom_cupcake3.jpg' %}" alt="Rose Dream Cupcake" style="width:100%; height:200px; object-fit:cover;">
+      <h4 style="color:#8c2042; margin:15px 0 5px; font-size:20px;">كب كيك روز دريم 🌸</h4>
+      <p style="color:#5a1a2e; font-size:15px; margin:0 15px 20px;">حلم من الورد والكريمة الفاتنة، طعم يذوب جمالًا 🌸</p>
+    </div>
+
+    <div class="card" style="
+        background:#fffdf8;
+        width:250px;
+        border-radius:20px;
+        box-shadow:0 6px 15px rgba(0,0,0,0.1);
+        overflow:hidden;
+        transition:transform 0.4s ease, box-shadow 0.4s ease;
+        text-align:center;
+      ">
+      <img src="{% static 'images/blossom_cupcake4.jpg' %}" alt="Happy Day Cupcake" style="width:100%; height:200px; object-fit:cover;">
+      <h4 style="color:#8c2042; margin:15px 0 5px; font-size:20px;">كب كيك هابي داي 💛</h4>
+      <p style="color:#5a1a2e; font-size:15px; margin:0 15px 20px;">حلا يملأ يومك بالبهجة والسعادة 🍯💛</p>
+    </div>
+
+  </div>
+</section>
+
+{% include 'footer.html' %}
