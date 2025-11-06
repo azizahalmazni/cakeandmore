@@ -1,23 +1,186 @@
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-    <meta charset="UTF-8">
-    <title>Cake & More</title>
-    <style>
-        body {
-            font-family: "Cairo", sans-serif;
-            background-color: #fff5f7;
-            color: #333;
-            text-align: center;
-            margin-top: 100px;
-        }
-        h1 {
-            color: #e68fa2;
-        }
-    </style>
-</head>
-<body>
-    <h1>🎂 أهلاً بك في Cake & More</h1>
-    <p>متجر الكيك والحلا الخاص بك 🍰</p>
-</body>
-</html>
+{% load static %}
+{% include 'header.html' %}
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+
+<style>
+  /* 🌸 الإعدادات العامة */
+  body {
+    margin: 0;
+    background: linear-gradient(160deg, #fdf3ec 0%, #f8e7d3 100%);
+    font-family: 'Cairo', sans-serif;
+    color: #5a3d2b;
+    perspective: 1200px;
+    overflow-x: hidden;
+  }
+
+  /* ✨ قسم العرض الرئيسي */
+  .hero {
+    position: relative;
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(145deg, #fef9f4, #f5e1d0);
+    box-shadow: inset 0 0 40px rgba(0,0,0,0.05);
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("/media/products/blossom_cupcakes/slide1.jpg");
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.05) translateZ(-50px);
+    filter: brightness(0.9);
+    opacity: 0.25;
+  }
+
+  .hero-content {
+    position: relative;
+    text-align: center;
+    transform-style: preserve-3d;
+    transform: translateZ(40px);
+  }
+
+  .hero-content h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 64px;
+    color: #b68c6f;
+    text-shadow: 2px 4px 10px rgba(0,0,0,0.1);
+    animation: float 4s ease-in-out infinite;
+  }
+
+  .hero-content p {
+    font-size: 18px;
+    color: #6d4c41;
+    margin-top: 15px;
+    text-shadow: 0 1px 3px rgba(255,255,255,0.6);
+  }
+
+  .hero-content a {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 14px 40px;
+    background: linear-gradient(145deg, #b68c6f, #8c6c54);
+    color: white;
+    border-radius: 35px;
+    text-decoration: none;
+    font-weight: 700;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    transform: translateZ(20px);
+    transition: 0.3s;
+  }
+
+  .hero-content a:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 18px rgba(0,0,0,0.25);
+  }
+
+  /* ✨ قسم المنتجات */
+  .products {
+    padding: 80px 40px;
+    text-align: center;
+    background: linear-gradient(180deg, #fffaf5, #f6eee5);
+  }
+
+  .products h3 {
+    font-family: 'Great Vibes', cursive;
+    color: #6b4226;
+    font-size: 48px;
+    margin-bottom: 40px;
+    text-shadow: 1px 3px 8px rgba(0,0,0,0.08);
+  }
+
+  .product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .product {
+    width: 270px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: all 0.4s ease;
+    transform-style: preserve-3d;
+  }
+
+  .product:hover {
+    transform: rotateY(10deg) rotateX(5deg) translateY(-10px);
+    box-shadow: 0 18px 28px rgba(0,0,0,0.18);
+  }
+
+  .product img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .product:hover img {
+    transform: scale(1.08);
+  }
+
+  .product h4 {
+    color: #b68c6f;
+    margin-top: 15px;
+    font-size: 20px;
+  }
+
+  .product p {
+    color: #6d4c41;
+    font-size: 14px;
+    padding: 0 15px 20px;
+  }
+
+  /* 🌸 تأثير الطفو العام */
+  @keyframes float {
+    0%, 100% { transform: translateY(0) translateZ(40px); }
+    50% { transform: translateY(-10px) translateZ(40px); }
+  }
+
+  /* 🪄 تذييل بسيط متناسق */
+  footer {
+    background-color: #e7d4bf;
+    text-align: center;
+    padding: 25px 0;
+    color: #5a3d2b;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+  }
+
+</style>
+
+<!-- ✅ قسم الترحيب ثلاثي الأبعاد -->
+<section class="hero">
+  <div class="hero-content">
+    <h2>تجربة المذاق والفخامة</h2>
+    <p>كب كيك بالكريمة والزهور... لأن الجمال يمكن تذوّقه ✨</p>
+    <a href="/store/">تصفّح منتجاتنا</a>
+  </div>
+</section>
+
+<!-- ✅ قسم المنتجات -->
+<section class="products">
+  <h3>منتجات مختارة</h3>
+  <div class="product-grid">
+    {% for product in products %}
+      <div class="product">
+        <img src="{{ product.image.url }}" alt="{{ product.name }}">
+        <h4>{{ product.name }}</h4>
+        <p>{{ product.description|truncatechars:60 }}</p>
+      </div>
+    {% empty %}
+      <p style="color:#6d4c41;">لا توجد منتجات لعرضها حاليًا.</p>
+    {% endfor %}
+  </div>
+</section>
+
+{% include 'footer.html' %}

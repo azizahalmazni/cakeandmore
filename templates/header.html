@@ -1,0 +1,50 @@
+{% load static %}
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+
+<!-- 🌟 الشريط الترويجي -->
+<div style="background-color: #e9d8c3; color: #5a3d2b; text-align: center; padding: 8px 0; font-family: 'Cairo'; font-size: 15px;">
+  🎁 توصيل مجاني للطلبات فوق <strong>150 ريال</strong> ✨
+</div>
+
+<header style="direction: rtl; background-color: #fffaf5; border-bottom: 2px solid #e0c8a9; box-shadow: 0 2px 6px rgba(0,0,0,0.05);">
+  <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 50px;">
+
+    <!-- ✅ الشعار الجديد -->
+    <div style="display: flex; align-items: center; gap: 15px;">
+<img src="{% static 'cococake_logo.jpg' %}" alt="Cake & More Logo"
+           style="height: 85px; width: 85px; object-fit: cover; border-radius: 50%; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+      <h1 style="font-family: 'Great Vibes', cursive; font-size: 48px; color: #a67c83; letter-spacing: 1px; font-weight: 600; margin: 0;">
+        Cake & More
+      </h1>
+    </div>
+
+    <!-- ✅ شريط البحث -->
+    <div style="flex-grow: 1; text-align: center;">
+      <input type="text" placeholder="ابحث في Cake & More..." 
+             style="width: 60%; padding: 10px 25px; border: 1px solid #d1bfa3; border-radius: 25px; font-family: 'Cairo'; outline: none; background-color: #fff;">
+    </div>
+
+    <!-- ✅ الأزرار -->
+    <div style="display: flex; align-items: center; gap: 15px;">
+      <a href="/login/" style="text-decoration: none; background-color: #bca37f; color: white; padding: 10px 20px; border-radius: 25px; font-weight: bold;">🔑 تسجيل الدخول</a>
+      <a href="/orders/" style="text-decoration: none; background-color: #6d4c41; color: white; padding: 10px 20px; border-radius: 25px; font-weight: bold;">🛍️ متابعة الطلب</a>
+    </div>
+  </div>
+
+  <nav style="background-color: #f8f4ed; padding: 12px 0; text-align: center; border-top: 1px solid #e6d9c0;">
+    <a href="/" style="margin: 0 20px; color: #6d4c41; text-decoration: none; font-weight: 700;">الرئيسية</a>
+    <a href="/store/" style="margin: 0 20px; color: #6d4c41; text-decoration: none; font-weight: 600;">منتجاتنا</a>
+    <a href="/special-orders/" style="margin: 0 20px; color: #6d4c41; text-decoration: none; font-weight: 600;">الطلبات الخاصة</a>
+    <a href="/about/" style="margin: 0 20px; color: #6d4c41; text-decoration: none; font-weight: 600;">عن المتجر</a>
+    <a href="/contact/" style="margin: 0 20px; color: #6d4c41; text-decoration: none; font-weight: 600;">تواصل معنا</a>
+  </nav>
+</header>
+<style>
+  img[alt="Cake & More Logo"] {
+    transition: transform 0.6s ease, filter 0.4s ease;
+  }
+  img[alt="Cake & More Logo"]:hover {
+    transform: rotate(8deg) scale(1.08);
+    filter: brightness(1.1);
+  }
+</style>
