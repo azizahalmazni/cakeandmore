@@ -1,98 +1,135 @@
 {% load static %}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+ <meta charset="UTF-8">
+  <title>Cake & More 🍰</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #fff9f5;
+      margin: 0;
+      font-family: 'Cairo', sans-serif;
+      color: #6b1b2e;
+      text-align: center;
+    }
 
-{% include 'header.html' %}
+    section {
+      padding: 70px 20px;
+      animation: fadeIn 1.2s ease;
+    }
 
-<!-- 🎉 القسم الترحيبي -->
-<section class="fade-in" style="text-align:center; padding:80px 20px; background-color:#fffaf2; font-family:'El Messiri', sans-serif; color:#6b1b2e;">
-  <h1 style="font-size:48px; color:#8c2042; margin-bottom:15px; animation:fadeUp 1.2s ease-out;">
-    مرحباً بك في <span style="color:#e9b20f;">Cake & More</span> ☀️
-  </h1>
-  <p style="font-size:20px; color:#5a1a2e; margin-bottom:25px; animation:fadeUp 1.6s ease-out;">
-    نكهات مشرقة، كريمة ذهبية، ولمسات من البهجة تجعل يومك أكثر دفئًا وسعادة 🌻
-  </p>
-  <a href="/store/" class="btn-cake" style="
-      display:inline-block;
-      background:linear-gradient(135deg,#ffd76e,#f2b6a0);
-      color:#6b1b2e;
-      padding:15px 45px;
-      border-radius:40px;
-      text-decoration:none;
-      font-weight:bold;
-      font-size:18px;
-      box-shadow:0 5px 10px rgba(0,0,0,0.2);
-      transition:all 0.3s ease;
-    ">ابدأ التسوق الآن!</a>
-</section>
+    h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 56px;
+      color: #d49a0a;
+    }
 
-<!-- 🧁 قسم المنتجات -->
-<section class="fade-in" style="text-align:center; padding:80px 20px;">
-  <h2 style="color:#c24b07; font-size:32px; margin-bottom:40px;">تشكيلة كب كيك Sun Flower 🌻</h2>
-  <div class="products" style="
-      display:flex;
-      flex-wrap:wrap;
-      justify-content:center;
-      gap:25px;
-      margin:60px auto;
-      padding:20px;
-    ">
+    h2 {
+      font-family: 'Cairo', sans-serif;
+      color: #8b2036;
+      margin-top: 50px;
+    }
 
-    <div class="card" style="
-        background:#fffdf8;
-        width:250px;
-        border-radius:20px;
-        box-shadow:0 6px 15px rgba(0,0,0,0.1);
-        overflow:hidden;
-        transition:transform 0.4s ease, box-shadow 0.4s ease;
-        text-align:center;
-      ">
-      <img src="{% static 'images/blossom_cupcake1.jpg' %}" alt="Sun Flower Cupcake" style="width:100%; height:200px; object-fit:cover;">
-      <h4 style="color:#8c2042; margin:15px 0 5px; font-size:20px;">كب كيك صن فلاور 🌻</h4>
-      <p style="color:#5a1a2e; font-size:15px; margin:0 15px 20px;">كب كيك مشمس بكريمة صفراء ناعمة تضيف إشراقة ليومك 🌞</p>
+    p {
+      font-size: 18px;
+      line-height: 1.8;
+      color: #5a1a2e;
+      max-width: 600px;
+      margin: 15px auto;
+    }
+
+    .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #f8b9a3, #ffd678);
+      color: #6b1b2e;
+      padding: 15px 40px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+      transition: 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: scale(1.07);
+    }
+
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 250px;
+      padding: 20px;
+      transition: 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 15px;
+      margin-bottom: 10px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+  {% include 'header.html' %}
+
+  <!-- 💛 قسم الترحيب -->
+  <section>
+    <h1>Cake & More</h1>
+    <p>كل قطعة كيك تُصنع بحب لتمنحك لحظة فريدة من السعادة والذوق الرفيع.<br>
+       نخبز بابتسامة ونقدّم بطابع يليق بلحظاتك الخاصة.</p>
+    <a href="/store/" class="btn">ابدأ التسوق الآن</a>
+  </section>
+
+  <!-- 🍰 قسم المنتجات -->
+  <section>
+    <h2>تشكيلة كب كيك مميزة</h2>
+    <div class="products">
+      <div class="card">
+        <img src="{% static 'images/blossom_cupcake1.jpg' %}" alt="Sun Flower Cupcake">
+        <h4>كب كيك صن فلاور</h4>
+        <p>نكهة فانيليا مشمسة بكريمة صفراء تضيف إشراقة ليومك.</p>
+      </div>
+
+      <div class="card">
+        <img src="{% static 'images/blossom_cupcake2.jpg' %}" alt="Blue Sky Cupcake">
+        <h4>كب كيك بلو سكاي</h4>
+        <p>نكهة التوت الأزرق ولمسة من النعومة الزهرية المنعشة.</p>
+      </div>
+
+      <div class="card">
+        <img src="{% static 'images/blossom_cupcake3.jpg' %}" alt="Rose Dream Cupcake">
+        <h4>كب كيك روز دريم</h4>
+        <p>حلم من الورد والكريمة الفاتنة، طعم يذوب جمالاً.</p>
+      </div>
+
+      <div class="card">
+        <img src="{% static 'images/blossom_cupcake4.jpg' %}" alt="Happy Day Cupcake">
+        <h4>كب كيك هابي داي</h4>
+        <p>حلا يملأ يومك بالبهجة والفرح بطعم الليمون المبهج.</p>
+      </div>
     </div>
+  </section>
 
-    <div class="card" style="
-        background:#fffdf8;
-        width:250px;
-        border-radius:20px;
-        box-shadow:0 6px 15px rgba(0,0,0,0.1);
-        overflow:hidden;
-        transition:transform 0.4s ease, box-shadow 0.4s ease;
-        text-align:center;
-      ">
-      <img src="{% static 'images/blossom_cupcake2.jpg' %}" alt="Blue Sky Cupcake" style="width:100%; height:200px; object-fit:cover;">
-      <h4 style="color:#8c2042; margin:15px 0 5px; font-size:20px;">كب كيك بلو سكاي 💙</h4>
-      <p style="color:#5a1a2e; font-size:15px; margin:0 15px 20px;">نكهة التوت الأزرق ولمسة من النعومة الزهرية 💙</p>
-    </div>
-
-    <div class="card" style="
-        background:#fffdf8;
-        width:250px;
-        border-radius:20px;
-        box-shadow:0 6px 15px rgba(0,0,0,0.1);
-        overflow:hidden;
-        transition:transform 0.4s ease, box-shadow 0.4s ease;
-        text-align:center;
-      ">
-      <img src="{% static 'images/blossom_cupcake3.jpg' %}" alt="Rose Dream Cupcake" style="width:100%; height:200px; object-fit:cover;">
-      <h4 style="color:#8c2042; margin:15px 0 5px; font-size:20px;">كب كيك روز دريم 🌸</h4>
-      <p style="color:#5a1a2e; font-size:15px; margin:0 15px 20px;">حلم من الورد والكريمة الفاتنة، طعم يذوب جمالًا 🌸</p>
-    </div>
-
-    <div class="card" style="
-        background:#fffdf8;
-        width:250px;
-        border-radius:20px;
-        box-shadow:0 6px 15px rgba(0,0,0,0.1);
-        overflow:hidden;
-        transition:transform 0.4s ease, box-shadow 0.4s ease;
-        text-align:center;
-      ">
-      <img src="{% static 'images/blossom_cupcake4.jpg' %}" alt="Happy Day Cupcake" style="width:100%; height:200px; object-fit:cover;">
-      <h4 style="color:#8c2042; margin:15px 0 5px; font-size:20px;">كب كيك هابي داي 💛</h4>
-      <p style="color:#5a1a2e; font-size:15px; margin:0 15px 20px;">حلا يملأ يومك بالبهجة والسعادة 🍯💛</p>
-    </div>
-
-  </div>
-</section>
-
-{% include 'footer.html' %}
+  {% include 'footer.html' %}
+</body>
+</html>

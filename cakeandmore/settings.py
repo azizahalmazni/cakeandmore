@@ -131,3 +131,5 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # 🆔 المفتاح الافتراضي للحقل الأساسي
 # ==============================
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'

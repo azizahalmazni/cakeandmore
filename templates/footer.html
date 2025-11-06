@@ -1,13 +1,40 @@
-  <footer style="
-      background: linear-gradient(90deg, #fff9f2, #ffe4ec);
-      color: #6b1b2e;
-      text-align: center;
-      padding: 15px;
-      font-family: 'Tajawal', sans-serif;
-      margin-top: 50px;
-      box-shadow: 0 -2px 8px rgba(255,182,193,0.2);
-    ">
-    <p>© 2025 Cake & More 🍰 — كل الحقوق محفوظة</p>
-  </footer>
-</body>
-</html>
+{% load static %}
+<footer class="site-footer">
+  <div class="footer-content">
+    <p>© 2025 جميع الحقوق محفوظة | <span>Cake & More</span></p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: url("{% static 'flawers.jpg' %}") center/cover no-repeat;
+    position: relative;
+    padding: 25px;
+    text-align: center;
+    color: #5a1a2e;
+    font-family: 'Cairo', sans-serif;
+    margin-top: 50px;
+    overflow: hidden;
+  }
+
+  .site-footer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(3px);
+    z-index: 1;
+  }
+
+  .footer-content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .footer-content span {
+    font-family: 'Dancing Script', cursive;
+    color: #d49a0a;
+    font-weight: bold;
+    font-size: 20px;
+  }
+</style>

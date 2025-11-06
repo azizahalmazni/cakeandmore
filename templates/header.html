@@ -1,40 +1,72 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    header {
-      background: linear-gradient(90deg, #ffdee9, #fff9f2);
-      color: #6b1b2e;
-      text-align: center;
-      padding: 20px;
-      font-family: 'Tajawal', sans-serif;
-      box-shadow: 0 2px 8px rgba(255,182,193,0.3);
-    }
-    header h1 {
-      margin: 0;
-      font-size: 26px;
-    }
-    nav a {
-      color: #b23a48;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: #ff8ca9;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>🍰 Cake & More</h1>
+{% load static %}
+<header class="site-header">
+  <div class="overlay">
+    <h1 class="logo">Cake & More</h1>
     <nav>
       <a href="{% url 'home' %}">الرئيسية</a>
-      <a href="{% url 'store:product_list' %}">المنتجات</a>
+      <a href="/store/">المنتجات</a>
       <a href="{% url 'contact' %}">تواصل معنا</a>
       <a href="{% url 'login' %}">تسجيل الدخول</a>
     </nav>
-  </header>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: relative;
+    height: 230px;
+    background: url("{% static 'flawers.jpg' %}") center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid rgba(219, 157, 177, 0.4);
+  }
+
+  .site-header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(3px);
+    z-index: 1;
+  }
+
+  .overlay {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+  }
+
+  .logo {
+    font-family: 'Dancing Script', cursive;
+    font-size: 64px;
+    color: #d49a0a;
+    margin: 0;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+  }
+
+  nav {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px 30px;
+    border-radius: 40px;
+    margin-top: 10px;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  }
+
+  nav a {
+    font-family: 'Cairo', sans-serif;
+    font-weight: bold;
+    color: #6b1b2e;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 17px;
+    transition: 0.3s ease;
+  }
+
+  nav a:hover {
+    color: #c55f7a;
+    border-bottom: 2px solid #c55f7a;
+  }
+</style>
