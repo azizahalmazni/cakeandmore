@@ -1,11 +1,6 @@
-"""
-🔗 روابط تطبيق orders - الطلبات والدفع لمتجر Cake & More
-"""
-
 from django.urls import path
-
-app_name = 'orders'
+from . import views
 
 urlpatterns = [
-    # سيتم إضافة المسارات لاحقًا (مثل إنشاء الطلب، تتبّع الطلب...)
+    path('checkout/', views.checkout, name='checkout'),
 ]

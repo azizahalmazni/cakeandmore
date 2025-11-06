@@ -1,11 +1,7 @@
-"""
-🔗 روابط تطبيق store - المتجر ومنتجات Cake & More
-"""
-
 from django.urls import path
-
-app_name = 'store'
+from . import views
 
 urlpatterns = [
-    # سيتم إضافة المسارات لاحقًا (مثل عرض المنتجات، التفاصيل، العربة...)
+    path('', views.store_home, name='store_home'),
+    path('custom/', views.custom_cake, name='custom_cake'),
 ]
