@@ -1,7 +1,7 @@
 from django.db import models
-from store.models import المنتج
+from store.models import منتج
 
-class الطلب(models.Model):
+class طلب(models.Model):
     الاسم = models.CharField(max_length=100, verbose_name="اسم العميل")
     البريد_الإلكتروني = models.EmailField(verbose_name="البريد الإلكتروني")
     رقم_الهاتف = models.CharField(max_length=20, verbose_name="رقم الهاتف")
@@ -14,12 +14,12 @@ class الطلب(models.Model):
         verbose_name_plural = "الطلبات"
 
     def __str__(self):
-        return f"طلب {self.id} - {self.الاسم}"
+        return f"طلب رقم {self.id} - {self.الاسم}"
 
 
-class عنصر_الطلب(models.Model):
-    الطلب = models.ForeignKey(الطلب, on_delete=models.CASCADE, related_name="العناصر", verbose_name="الطلب")
-    المنتج = models.ForeignKey(المنتج, on_delete=models.CASCADE, verbose_name="المنتج")
+class عنصر_طلب(models.Model):
+    الطلب = models.ForeignKey(طلب, on_delete=models.CASCADE, related_name="العناصر", verbose_name="الطلب")
+    المنتج = models.ForeignKey(منتج, on_delete=models.CASCADE, verbose_name="المنتج")
     الكمية = models.PositiveIntegerField(default=1, verbose_name="الكمية")
 
     class Meta:

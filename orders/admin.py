@@ -1,29 +1,21 @@
 from django.contrib import admin
-from .models import الطلب, عنصر_الطلب
+from .models import طلب, عنصر_طلب
 
-class عنصر_الطلبInline(admin.TabularInline):
-    model = عنصر_الطلب
+class عنصر_طلبInline(admin.TabularInline):
+    model = عنصر_طلب
     extra = 1
 
-@admin.register(الطلب)
+@admin.register(طلب)
 class طلبAdmin(admin.ModelAdmin):
     list_display = ("id", "الاسم", "البريد_الإلكتروني", "رقم_الهاتف", "تاريخ_الطلب", "مكتمل")
     list_filter = ("مكتمل", "تاريخ_الطلب")
     search_fields = ("الاسم", "البريد_الإلكتروني", "رقم_الهاتف")
     list_editable = ("مكتمل",)
-    inlines = [عنصر_الطلبInline]
-
-    class Meta:
-        verbose_name = "طلب"
-        verbose_name_plural = "الطلبات"
+    inlines = [عنصر_طلبInline]
 
 
-@admin.register(عنصر_الطلب)
+@admin.register(عنصر_طلب)
 class عنصر_طلبAdmin(admin.ModelAdmin):
     list_display = ("الطلب", "المنتج", "الكمية")
     list_filter = ("الطلب",)
     search_fields = ("المنتج__اسم_المنتج",)
-
-    class Meta:
-        verbose_name = "عنصر طلب"
-        verbose_name_plural = "عناصر الطلبات"

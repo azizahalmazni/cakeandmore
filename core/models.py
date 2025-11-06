@@ -1,6 +1,6 @@
 from django.db import models
 
-class ContactMessage(models.Model):
+class رسالة_تواصل(models.Model):
     الاسم = models.CharField(max_length=100, verbose_name="اسم المرسل")
     البريد_الإلكتروني = models.EmailField(verbose_name="البريد الإلكتروني")
     الموضوع = models.CharField(max_length=200, verbose_name="الموضوع")

@@ -1,6 +1,6 @@
 from django.db import models
 
-class التصنيف(models.Model):
+class تصنيف(models.Model):
     اسم_التصنيف = models.CharField(max_length=100, verbose_name="اسم التصنيف")
     وصف = models.TextField(blank=True, null=True, verbose_name="الوصف")
 
@@ -12,8 +12,8 @@ class التصنيف(models.Model):
         return self.اسم_التصنيف
 
 
-class المنتج(models.Model):
-    التصنيف = models.ForeignKey(التصنيف, on_delete=models.CASCADE, related_name="المنتجات", verbose_name="التصنيف")
+class منتج(models.Model):
+    التصنيف = models.ForeignKey(تصنيف, on_delete=models.CASCADE, related_name="المنتجات", verbose_name="التصنيف")
     اسم_المنتج = models.CharField(max_length=200, verbose_name="اسم المنتج")
     الوصف = models.TextField(verbose_name="الوصف")
     السعر = models.DecimalField(max_digits=8, decimal_places=2, verbose_name="السعر")
