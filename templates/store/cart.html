@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+    body {
+        background-color: #fff9f5;
+        font-family: 'Cairo', sans-serif;
+        color: #6b1b2e;
+    }
+
+    h2 {
+        font-family: 'Dancing Script', cursive;
+        font-size: 40px;
+        color: #d49a0a;
+        margin-bottom: 25px;
+    }
+
+    .cart-container {
+        background: #ffffff;
+        border-radius: 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        padding: 40px;
+        width: 80%;
+        margin: 60px auto;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    th {
+        background: linear-gradient(90deg, #ffd6e8, #fff1db);
+        color: #8c2042;
+        padding: 15px;
+        font-size: 18px;
+    }
+
+    td {
+        background: #fffdfc;
+        padding: 12px;
+        font-size: 17px;
+        border-bottom: 1px solid #f2d5d5;
+    }
+
+    tr:hover td {
+        background-color: #fff6f0;
+    }
+
+    .total {
+        font-size: 22px;
+        color: #8c2042;
+        font-weight: bold;
+        margin-top: 25px;
+    }
+
+    .total span {
+        color: #d49a0a;
+    }
+
+    .empty {
+        font-size: 20px;
+        color: #8c2042;
+        margin-top: 50px;
+    }
+
+    .checkout-btn {
+        background: linear-gradient(90deg, #ffb6c1, #ffd700);
+        border: none;
+        color: white;
+        padding: 12px 25px;
+        font-size: 18px;
+        border-radius: 25px;
+        margin-top: 20px;
+        cursor: pointer;
+        transition: 0.3s;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .checkout-btn:hover {
+        opacity: 0.9;
+        transform: scale(1.05);
+    }
+</style>
+
+<div class="cart-container">
+    <h2>🧺 سلة المشتريات</h2>
+
+    {% if cart_items %}
+        <table>
+            <thead>
+                <tr>
+                    <th>المنتج</th>
+                    <th>الكمية</th>
+                    <th>السعر</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in cart_items %}
+                <tr>
+                    <td>{{ item.product.name }}</td>
+                    <td>{{ item.quantity }}</td>
+                    <td>{{ item.total_price }} ر.س</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="total">
+            الإجمالي: <span>{{ total }} ر.س</span>
+        </div>
+
+        <a href="#" class="checkout-btn">إتمام الطلب 🛍️</a>
+    {% else %}
+        <p class="empty">السلة فارغة حالياً 🧁</p>
+    {% endif %}
+</div>
+
+{% endblock %}
