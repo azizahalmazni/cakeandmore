@@ -17,7 +17,7 @@ SECRET_KEY = 'django-insecure-#3$p@n2dmd!+heoi25&ilmx*bfj4s!+prfaf(79k8!27x(@$di
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['cakeandmore.onrender.com', '127.0.0.1', 'localhost']
 
 
 # ==============================
